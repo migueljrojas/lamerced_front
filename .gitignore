@@ -11,6 +11,7 @@ oauth.js
 oauth.config
 .git
 .DS_Store
+id_rsa.pub
 
 Dockerfile
 yarn.lock

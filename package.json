@@ -4,17 +4,14 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "restart": "pm2 startOrRestart ecosystem.config.js",
+        "deploy": "pm2 deploy ecosystem.config.js production",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "next",
         "build": "next build",
-        "start": "node server.js",
-        "docker:build": "docker build -t frontend .",
-        "docker:clean": "docker rm -f frontend || true",
-        "docker:run": "docker run -p 3000:3000 --name frontend frontend",
-        "docker:stop": "docker stop frontend",
-        "docker:start": "docker start frontend && yarn run docker:logs",
-        "docker:logs": "docker logs -f frontend",
-        "deploy":
-            "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
+        "start": "NODE_ENV=production node server.js"
     },
+    "proxy": "https://fundacionparadeportes.org:3000",
     "keywords": [],
     "author": "",
     "license": "ISC",

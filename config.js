@@ -1,1 +1,1 @@
-export const Config = {apiUrl: 'http://lamercedvida.admin'}
+export const Config = {apiUrl: 'https://admin.lamercedvida.com'}
