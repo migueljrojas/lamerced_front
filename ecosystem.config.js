@@ -18,7 +18,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:migueljrojas/lamerced_front.git',
       path : '/home/admin/web/lamercedvida.com/public_html',
-      'post-deploy' : 'npm install && npm run build && pm2 startOrRestart ecosystem.config.js --env production'
+      'post-deploy' : 'yarn install && yarn run build && pm2 startOrRestart ecosystem.config.js --env production'
     }
   }
 };
