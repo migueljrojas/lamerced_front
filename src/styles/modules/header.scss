@@ -1,0 +1,245 @@
+.header {
+    $h: &;
+
+    @include trans;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: $white;
+    transform: translateY(-40px);
+
+    @include mq(md) {
+        position: relative;
+        transform: translateY(0);
+    }
+
+    &__secondary {
+      background: transparentize($pink, 0.9);
+    }
+
+    &__container {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      justify-content: space-between;
+
+
+      @include mq(md) {
+        padding: 20px 0;
+        max-width: 1180px;
+      }
+
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__contact-number {
+      line-height: 1;
+      font-size: 3.5vw;
+
+      @include mq(md) {
+        font-size: 2vw;
+
+      }
+    }
+
+    &__social {
+      display: flex;
+      justify-content: center;
+
+      @include mq(md) {
+        justify-content: flex-end;
+      }
+
+      li {
+        margin-left: 20px;
+      }
+    }
+
+    &__logo {
+        width: 50%;
+        max-width: 300px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__nav {
+      @include trans;
+
+      display: flex;
+      position: fixed;
+      top: 104px;
+      background: transparentize($mainColor, .15);
+      width:100%;
+      height: 100vh;
+      left:0;
+      transform: translateX(-100%);
+      align-items: center;
+
+      @include mq(md) {
+        position: static;
+        transform: translateX(0);
+        width: auto;
+        background: none;
+        height: auto;
+      }
+    }
+
+    &__menu {
+        width: 100%;
+        transform: translateY(-52px);
+
+        @include mq(md) {
+            width: auto;
+            display: flex;
+            justify-content:flex-end;
+            transform: translateY(0);
+        }
+
+        li {
+            margin-left: 20px;
+            margin-right: 20px;
+            border-bottom: 1px solid $white;
+
+            @include mq(md) {
+                margin-right: auto;
+                border-bottom: none;
+            }
+        }
+
+        a {
+            color: $white;
+            font-size: 24px;
+            line-height: 48px;
+            height: 48px;
+            display: block;
+
+            @include mq(md) {
+                font-size: 16px;
+                line-height: 1;
+                height: auto;
+            }
+
+            @include mq(md) {
+                color: $mainColor;
+
+                &:hover {
+                    color: $mainColor - #333;
+                }
+            }
+        }
+    }
+
+    &__hamburguer {
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        position: relative;
+
+        @include mq(md) {
+            display: none;
+        }
+
+        span {
+            background-color: $mainColor;
+            border-radius: 2px;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+
+            &:nth-child(1) {
+                animation:outT 0.6s $easing backwards;
+                animation-direction:reverse;
+            }
+            &:nth-child(2) {
+                margin: 7px 0;
+                animation:outM 0.6s $easing backwards;
+                animation-direction:reverse;
+            }
+            &:nth-child(3) {
+                animation:outBtm 0.6s $easing backwards;
+                animation-direction:reverse;
+            }
+        }
+    }
+
+    &.-ontop {
+        transform: translateY(0);
+
+        & + main {
+            @include trans;
+
+            padding-top: 105px;
+
+            @include mq(md) {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &.-open {
+        #{$h}__hamburguer {
+            span:nth-child(1) {
+                animation:inT 0.6s $easing forwards;
+            }
+            span:nth-child(2) {
+                animation:inM 0.6s $easing forwards;
+            }
+            span:nth-child(3) {
+                animation:inBtm 0.6s $easing forwards;
+            }
+        }
+
+        #{$h}__nav {
+            transform: translateX(0);
+        }
+    }
+
+    & + main {
+        @include trans;
+
+        padding-top: 62px;
+
+        @include mq(md) {
+            padding-top: 0;
+        }
+    }
+}
+
+//hamburguer animations
+@keyframes inM{
+50%{transform:rotate(0deg);}
+100%{transform:rotate(45deg);}
+}
+
+@keyframes outM{
+50%{transform:rotate(0deg);}
+100%{transform:rotate(45deg);}
+}
+
+@keyframes inT{
+0%{transform: translateY(0px) rotate(0deg);}
+50%{transform: translateY(9px) rotate(0deg);}
+100%{transform: translateY(9px) rotate(135deg);}
+}
+
+@keyframes outT{
+0%{transform: translateY(0px) rotate(0deg);}
+50%{transform: translateY(9px) rotate(0deg);}
+100%{transform: translateY(9px) rotate(135deg);}
+}
+
+@keyframes inBtm{
+0%{transform: translateY(0px) rotate(0deg);}
+50%{transform: translateY(-9px) rotate(0deg);}
+100%{transform: translateY(-9px) rotate(135deg);}
+}
+@keyframes outBtm{
+0%{transform: translateY(0px) rotate(0deg);}
+50%{transform: translateY(-9px) rotate(0deg);}
+100%{transform: translateY(-9px) rotate(135deg);}
+}

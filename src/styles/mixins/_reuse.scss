@@ -1,0 +1,187 @@
+@mixin trans($prop: all, $d: $duration, $e: $easing) {
+    transition: $prop $d $e;
+}
+
+@mixin title($size: $head, $color: $white, $align: 'left') {
+    text-transform: uppercase;
+    font-size: $size;
+    color: $color;
+    text-align: #{$align};
+}
+
+@mixin img($ratio: 56.5%, $width: 100%, $imgheight: auto, $imgwidth: 100%) {
+    position: relative;
+    width: $width;
+    overflow: hidden;
+    padding-bottom: $ratio;
+    height: 0;
+
+    img {
+        position: absolute;
+        width: $imgwidth;
+        height: $imgheight;
+    }
+}
+
+@mixin padd($mode: both, $size: full) {
+    @if $size == full {
+
+        @if $mode == both {
+
+            padding-top: 16%;
+            padding-bottom: 16%;
+
+            @include mq(sm){
+                padding-top: 12%;
+                padding-bottom: 12%;
+            }
+
+            @include mq(md){
+                padding-top: 8%;
+                padding-bottom: 8%;
+            }
+        }
+
+        @if $mode == top {
+
+            padding-top: 16%;
+
+            @include mq(sm){
+                padding-top: 12%;
+            }
+
+            @include mq(md){
+                padding-top: 8%;
+            }
+        }
+
+        @if $mode == bottom {
+
+            padding-bottom: 16%;
+
+            @include mq(sm){
+                padding-bottom: 12%;
+            }
+
+            @include mq(md){
+                padding-bottom: 8%;
+            }
+        }
+    }
+
+    @if $size == half {
+        @if $mode == both {
+
+            padding-top: 8%;
+            padding-bottom: 8%;
+
+            @include mq(sm){
+                padding-top: 6%;
+                padding-bottom: 6%;
+            }
+
+            @include mq(md){
+                padding-top: 4%;
+                padding-bottom: 4%;
+            }
+        }
+
+        @if $mode == top {
+
+            padding-top: 8%;
+
+            @include mq(sm){
+                padding-top: 6%;
+            }
+
+            @include mq(md){
+                padding-top: 4%;
+            }
+        }
+
+        @if $mode == bottom {
+
+            padding-bottom: 8%;
+
+            @include mq(sm){
+                padding-bottom: 6%;
+            }
+
+            @include mq(md){
+                padding-bottom: 4%;
+            }
+        }
+    }
+}
+
+@mixin overlay($level: .5, $zdex: 2) {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,$level);
+    z-index: $zdex;
+}
+
+@mixin close($color: $white, $size: 24px) {
+    position: absolute;
+    display: block;
+    width: $size;
+    height: $size;
+    cursor: pointer;
+    transform: rotate(45deg);
+
+    span{
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        top:calc(50% - 1px);
+        background: $color;
+        display: block;
+
+        &:last-child {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+@mixin caret($point: up, $size: 20px, $color: $white) {
+    width: $size;
+    height: $size;
+    position: relative;
+    display: inline-block;
+
+    &:before{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-bottom: 2px solid $color;
+        border-left: 2px solid $color;
+        left:0;
+
+        @if $point == up {
+            top:60%;
+            transform: rotate(135deg);
+        }
+
+        @if $point == down {
+            bottom:10%;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+@mixin btn($btnwhith: 300px) {
+  display: inline-block;
+  background: $mainColor;
+  color: $white;
+  padding: 10px 50px 13px 50px;
+  border-radius: 25px;
+  font-weight: 600;
+  border: none;
+  min-width: $btnwhith;
+  text-align: center;
+  cursor: pointer;
+}

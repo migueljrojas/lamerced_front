@@ -1,0 +1,323 @@
+.home {
+  &__hero {
+    position: relative;
+
+    &__slider {
+        margin-bottom: -6px !important;
+    }
+
+    &__image{
+      @include img(120%, 100%, 100%, auto);
+
+      @include mq(md) {
+        @include img(40%);
+      }
+    }
+
+    &__data {
+      position: absolute;
+      top: 5%;
+      padding: 20px;
+      width: 100%;
+
+      @include mq(md) {
+        max-width: 590px;
+        top: 25%;
+        right: 50%;
+        width: 50%;
+      }
+
+      &__title {
+
+        @include title(24px);
+
+        @include mq(md) {
+          @include title(36px);
+        }
+      }
+
+      &__text {
+        font-size: 20px;
+        color: $pink;
+        display: flex;
+        margin-bottom: 60px;
+        width: 80%;
+        max-width: 400px;
+      }
+
+      &__button {
+        @include btn;
+      }
+    }
+  }
+
+  &__about {
+
+    &__wrapper {
+      flex-wrap: wrap;
+
+      @include mq(md) {
+        display: flex;
+      }
+    }
+
+    &__col {
+        position: relative;
+
+      @include mq(md) {
+        width: 50%;
+      }
+    }
+
+    &__image {
+        @include img($ratio: 68%, $imgheight: 100%, $imgwidth: auto);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding-bottom: 0;
+        height: auto;
+    }
+
+    &__content {
+      padding: 20px;
+
+      @include mq(md) {
+        @include padd();
+        max-width: 590px;
+        padding-left: 50px;
+      }
+
+      &__title {
+        color: $blue;
+        text-align: center;
+      }
+
+      &__text {
+        text-align: center;
+      }
+    }
+  }
+
+  &__what-we-do {
+    @include padd(both, half);
+
+    &__data {
+      max-width: 400px;
+
+      &__title {
+        color: transparentize($mainColor, 0.5);
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        text-align: center;
+
+        @include mq(md) {
+          text-align: left;
+        }
+      }
+
+      &__text {
+        text-align: center;
+        padding-bottom: 10px;
+
+        @include mq(md) {
+          text-align: left;
+        }
+      }
+    }
+
+    &__list {
+      max-width: 500px;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+
+        @include mq(md) {
+          padding: 0,
+        }
+      }
+
+      &__number {
+        color: transparentize($mainColor, 0.5);
+        font-size: 60px;
+        font-family: $titleFont;
+        min-width: 50px;
+      }
+
+      &__text {
+        padding-left: 10px;
+        margin: 0;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__news {
+
+    &__title {
+      @include title;
+      text-align: center;
+      color: transparentize($blue, 0.3);
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    &__slider {
+        @include padd(top, half);
+
+        .slick-prev,
+        .slick-next {
+            &:before {
+                color: $blue;
+            }
+        }
+
+        .slick-prev {
+            left: -40px;
+        }
+
+        .slick-next {
+            right: -40px;
+        }
+    }
+
+    &__slide {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &__article {
+      display: block;
+      width: 100%;
+      max-height: 500px;
+
+      &__image {
+        @include img(55%);
+
+        img {
+            min-height: 100%;
+        }
+      }
+
+      &__data {
+        display: inline-block;
+        background: $lightGray;
+        padding: 0 10px 10px 10px;
+
+        &__title {
+          color: $blue;
+          font-size: 18px;
+        }
+
+        &__text {
+          margin: 0;
+          padding-bottom: 5px;
+        }
+
+        &__more {
+          font-weight: 700;
+          color: $darkGray;
+        }
+      }
+    }
+  }
+
+  &__sindrome {
+
+    @include padd;
+
+    @include mq(md) {
+      display: flex;
+      padding-bottom: 0;
+    }
+
+    &__col {
+
+      @include mq(md) {
+        width: 50%;
+      }
+
+      &--data {
+          @include padd(both, half);
+          background: transparentize($mainColor, .9);
+        order: 2;
+
+        @include mq(md) {
+          order: 1;
+        }
+      }
+
+      &--image {
+        position: relative;
+        order: 1;
+
+        @include mq(md) {
+          order: 2;
+        }
+      }
+    }
+
+    &__data {
+      display: block;
+      text-align: center;
+      padding: 0 20px 0 20px;
+
+      @include mq(md) {
+        max-width: 500px;
+        margin-top: 10px;
+        padding: 0 30px 0 0px;
+        float: right;
+      }
+
+      &__title {
+        @include title(21px);
+        text-align: center;
+        text-transform: uppercase;
+        color: transparentize($mainColor, 0.5);
+        margin: 0;
+
+        @include mq(md) {
+          @include title(32px);
+          color: transparentize($mainColor, 0.5);
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+
+      &__text {
+        padding: 10px 0 0 0;
+
+        p {
+            padding-top: 10px;
+        }
+      }
+
+      &__more {
+        @include btn;
+        margin-top: 10px;
+        max-width: 80%;
+        font-size: 24px;
+      }
+    }
+
+    &__image {
+      @include img($imgheight: auto, $imgwidth: 100%);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding-bottom: 0;
+      height: auto;
+    }
+  }
+
+  .videos {
+      background: $white;
+  }
+}

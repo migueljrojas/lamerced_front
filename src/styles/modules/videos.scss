@@ -1,0 +1,19 @@
+.videos {
+  background: $lightGray;
+
+  @include padd;
+
+  &__title {
+    @include title;
+    color: transparentize($blue, 0.3);
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 30px;
+  }
+
+  &__player {
+    padding: 10px 0;
+  }
+}

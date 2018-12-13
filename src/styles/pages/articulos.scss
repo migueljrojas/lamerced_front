@@ -1,0 +1,129 @@
+.articulos {
+    &__hero {
+        img {
+            width: 100%;
+            height: auto;
+            @include mq(sm) {
+
+            }
+        }
+    }
+
+    &__body {
+        @include padd();
+
+        &__title {
+            color: $mainColor;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 30px;
+            font-size: 28px;
+
+            @include mq(sm) {
+                font-size: 36px;
+            }
+        }
+
+        &__social {
+            display: flex;
+            min-height: 50px;
+            justify-content: space-between;
+            border-top: 1px solid $darkGray;
+            border-bottom: 1px solid $darkGray;
+            margin-bottom: 20px;
+            padding: 0 20px;
+
+            span {
+                align-self: center;
+            }
+
+            ul {
+                display: flex;
+                align-self: center;
+
+                li {
+                    padding: 0 10px 0 10px;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        p {
+            margin:0 15px;
+            padding-bottom: 10px;
+
+            @include mq(sm) {
+                margin: 0;
+            }
+        }
+
+        img {
+            width: 100%;
+            margin: 20px 0;
+
+            @include mq(sm) {
+                margin: 0;
+                margin-bottom: 20px;
+                width: 50%;
+                height: auto;
+                &:nth-of-type(odd) {
+                    float:right;
+                    margin-left: 20px;
+                }
+
+                &:nth-of-type(even) {
+                    float: left;
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        h2 {
+            color: $blue;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 20px 0;
+
+            @include mq(sm) {
+                font-size: 20px;
+                margin: 0;
+            }
+        }
+
+        h3 {
+            border-top: 1px solid $darkGray;
+            border-bottom: 1px solid $darkGray;
+            padding: 40px 20px;
+            margin: 20px;
+
+            &:nth-of-type(odd) {
+                color: $mainColor;
+            }
+
+            &:nth-of-type(even) {
+                color: $blue;
+            }
+
+            @include mq(sm) {
+                margin: 0;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                width: 300px;
+                min-height: 100px;
+
+                &:nth-of-type(odd) {
+                    float: right;
+                    margin-left: 30px;
+                    color: $mainColor;
+                }
+
+                &:nth-of-type(even) {
+                    float: left;
+                    margin-right: 30px;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}

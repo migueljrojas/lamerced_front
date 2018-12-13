@@ -1,0 +1,104 @@
+.footer {
+  background: transparentize($mainColor, 0.9);
+
+  &__contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    transform: translateY(-30%);
+    background: $mainColor;
+    width: 80%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    padding: 8px;
+    margin-bottom: -20px;
+
+    @include mq(md) {
+      flex-wrap: nowrap;
+      transform: translateY(-50%);
+    }
+
+    &__data {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      @include mq(md) {
+        flex-wrap: nowrap;
+      }
+
+      i {
+        order: 2;
+        color: $white;
+        font-size: 24px;
+        align-self: center;
+        padding: 0 10px;
+
+        @include mq(md) {
+          order: 1;
+          padding: 0 10px;
+          font-size: 36px;
+        }
+      }
+
+      &__phone {
+        order: 3;
+        color: $white;
+        align-self: center;
+        font-size: 24px;
+        padding: 0 10px;
+
+        @include mq(md) {
+          order: 2;
+          font-size: 28px;
+        }
+      }
+
+      &__text {
+        order: 1;
+        color: $white;
+        align-self: center;
+        padding: 0 15px;
+        font-size: 18px;
+
+        @include mq(md) {
+          font-size: 28px;
+          order: 3;
+        }
+      }
+    }
+
+    &__buttons {
+      padding: 0 5px;
+    }
+
+    &__button {
+      @include btn(250px);
+      display: flex;
+      background: $white;
+      color: $mainColor;
+      justify-content: center;
+      font-size: 12px;
+
+      @include mq(md) {
+        @include btn;
+        display: flex;
+        background: $white;
+        color: $mainColor;
+        justify-content: center;
+      }
+
+      &:first-of-type {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $mainColor;
+    text-align: center;
+    padding-bottom: 30px;
+ }
+}

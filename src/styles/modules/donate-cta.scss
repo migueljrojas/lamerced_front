@@ -1,0 +1,38 @@
+.donate-cta{
+  @include padd();
+  background: $lightGray;
+
+  &__text {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0;
+
+    @include mq(sm) {
+      text-align: right;
+      font-size: 32px;
+    }
+
+    span {
+      color: $mainColor;
+    }
+  }
+
+  &__contact-wrapper {
+    text-align: center;
+
+    @include mq(md) {
+      display: inline-block;
+      padding-left: 50px;
+    }
+  }
+
+  &__phone {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  &__donation-link {
+    @include btn;
+  }
+}

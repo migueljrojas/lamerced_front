@@ -1,0 +1,40 @@
+$white: #fff;
+$black: #000;
+$corpBlack: #3e372c;
+$darkestGray: #333;
+$darkGray: #787871;
+$midGray: #999;
+$lightGray: #ebebeb;
+$lightestGray: #f4f7f8;
+$pink: #fe0061;
+$blue: #85cff6;
+$purple: #bc82d7;
+
+$mainColor: $pink;
+$link: $mainColor;
+$linkHover: $mainColor + #333;
+$text: $white;
+$textDark: $black;
+$accent: $mainColor;
+$bg: $white;
+$bgSecondary: $mainColor;
+$bgDark: $black;
+
+$base: 40px;
+$radius: 20px;
+
+$head: 60px;
+$xxl: 50px;
+$xl: 24px;
+$lg: 21px;
+$md: 18px;
+$sm: 16px;
+$xs: 14px;
+$xxs: 12px;
+
+$duration: 0.3s;
+$easing: cubic-bezier(.785, .135, .15, .86);
+$easingLight: ease;
+
+$mainFont: 'Lato', sans-serif;
+$titleFont: 'Montserrat', sans-serif;

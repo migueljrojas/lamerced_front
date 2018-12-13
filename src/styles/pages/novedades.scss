@@ -1,0 +1,260 @@
+.novedades {
+
+    &__hero {
+        position: relative;
+
+        &__image{
+            @include img(90%, 100%, 100%, auto);
+
+            @include mq(md) {
+            @include img(30%);
+            }
+        }
+
+        &__data {
+            position: absolute;
+            top: 5%;
+            padding: 20px;
+            width: 100%;
+
+            @include mq(md) {
+                max-width: 590px;
+                top: 25%;
+                right: 50%;
+                width: 50%;
+                padding: 0;
+            }
+
+            &__title {
+
+                @include title(24px);
+
+                @include mq(md) {
+                  @include title(36px);
+                }
+            }
+
+            &__text {
+                font-size: 20px;
+                color: $pink;
+                display: flex;
+                margin-bottom: 60px;
+                width: 80%;
+                max-width: 400px;
+            }
+        }
+    }
+
+    &__body {
+        @include padd;
+
+        &__title {
+            text-transform: uppercase;
+            text-align: center;
+            color: $blue;
+            @include padd(bottom, half);
+            margin: 0;
+        }
+
+        &__main-new {
+            @include padd(bottom);
+
+            .flexrow {
+                align-items: stretch;
+            }
+
+            &__col {
+                background: $lightestGray;
+            }
+
+            &__image {
+                @include img(95%, 100%, 100%, auto);
+            }
+
+            &__article {
+                @include padd();
+                padding-left: 15px;
+                padding-right: 15px;
+
+                @include mq(sm) {
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+            }
+
+            &__title {
+                color: $mainColor;
+                font-size: 32px;
+                padding-bottom: 20px;
+                margin: 0;
+                font-weight: 600;
+            }
+
+            &__text {
+                font-size: 24px;
+                padding-bottom: 20px;
+            }
+        }
+
+        &__top-news {
+            @include padd(bottom);
+
+            &__image {
+                @include img(85%, 100%, 100%, auto);
+            }
+
+            &__article {
+                @include padd();
+                background: $lightestGray;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-bottom: 20px;
+
+                @include mq(sm) {
+                    margin-bottom: 0;
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+
+                &__title {
+                    color: $blue;
+                    font-size: 24px;
+                    padding-bottom: 20px;
+                    margin: 0;
+                    font-weight: 600;
+                }
+
+                &__text {
+                    font-size: 18px;
+                    padding-bottom: 20px;
+                }
+            }
+        }
+
+        &__other-news {
+            @include padd(bottom, half);
+
+            @include mq(sm) {
+                @include padd(bottom);
+            }
+
+            &__wrapper {
+                $w:&;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+
+                @include mq(sm) {
+                    display: flex;
+                }
+
+                &:after {
+                    content:"";
+                    position: absolute;
+                    bottom: 0;
+                    left: 15px;
+                    right: 15px;
+                    height: 1px;
+                    background: $lightGray;
+                }
+
+                &:nth-child(3),
+                &:nth-child(4) {
+                    .novedades__body__other-news__article {
+                    padding-left: 0;
+                    padding-right: 15px;
+                    }
+                    #{$w}__col {
+                        &:first-child {
+                            order: 2;
+                        }
+                    }
+                }
+
+                &__col {
+                    &:first-child {
+                        @include mq(sm) {
+                            flex-basis: 30%;
+                            flex-shrink: 0;
+                        }
+                    }
+                }
+            }
+
+            &__image {
+                @include img(85%, 100%, 100%, auto);
+
+                @include mq(sm) {
+                    @include img(142%, 100%, 100%, auto);
+                }
+            }
+
+            &__article {
+                margin-bottom: 20px;
+
+                @include mq(sm) {
+                    padding-left: 15px;
+                    margin-bottom: 0;
+                }
+
+
+                &__title {
+                    color: $mainColor;
+                    font-size: 24px;
+                    margin: 0;
+                    padding-top: 20px;
+                    padding-bottom: 10px;
+                    font-weight: 600;
+
+                    @include mq(sm) {
+                        padding-top: 0;
+                    }
+                }
+
+                &__text {
+                    font-size: 18px;
+                    padding-bottom: 10px;
+                    margin: 0;
+                }
+            }
+        }
+
+        &__news-list {
+            @include padd(bottom);
+
+            @include mq(sm) {
+                padding-bottom: 0;
+            }
+
+            &__article {
+                @include padd;
+                padding-left: 15px;
+                padding-right: 15px;
+                border-bottom: 1px solid $lightGray;
+
+                &:hover {
+                    background: $lightestGray;
+                }
+
+                @include mq(sm) {
+                    margin-bottom: 0;
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+
+
+                &__title {
+                    color: $blue;
+                    font-size: 24px;
+                    margin: 0;
+                    padding-bottom: 20px;
+                    font-weight: 600;
+                }
+
+                &__text {
+                    font-size: 18px;
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+}

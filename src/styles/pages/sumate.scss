@@ -1,0 +1,158 @@
+.sumate {
+
+    &__hero {
+        position: relative;
+
+        &__image{
+            @include img(90%, 100%, 100%, auto);
+
+            @include mq(md) {
+            @include img(30%);
+            }
+        }
+
+        &__data {
+            position: absolute;
+            top: 5%;
+            padding: 20px;
+            width: 100%;
+
+            @include mq(md) {
+                max-width: 590px;
+                top: 25%;
+                right: 50%;
+                width: 50%;
+                padding: 0;
+            }
+
+            &__title {
+
+                @include title(24px);
+
+                @include mq(md) {
+                  @include title(36px);
+                }
+            }
+
+            &__text {
+                font-size: 20px;
+                color: $pink;
+                display: flex;
+                margin-bottom: 60px;
+                width: 80%;
+                max-width: 400px;
+            }
+        }
+    }
+
+    &__body {
+        @include padd;
+
+        &__content {
+
+            &__wrapper {
+                padding-top: 20px;
+            }
+
+            &__text {
+                font-size: 24px;
+                &--intro {
+                    font-weight: bold;
+                }
+            }
+
+            &__title {
+                color: $mainColor;
+            }
+
+            &__list {
+                margin-left: 20px;
+                padding: 20px 0;
+
+                &__item, li {
+                    display: flex;
+                    margin-bottom: 5px;
+
+                    &:before {
+                        content:'-';
+                        color: $mainColor;
+                        margin-right: 20px;
+                        display: inline-flex;
+                        align-items: center;
+                    }
+                }
+
+
+                &__text {
+                    font-size: 20px;
+                    margin: 0;
+                }
+            }
+        }
+
+        &__form {
+            padding-top: 20px;
+
+            &__title {
+                margin: 0;
+                margin-bottom: 20px;
+                color: $blue;
+                font-weight: 600;
+                font-size: 28px;
+
+                @include mq(sm) {
+                    font-size: 36px;
+                }
+            }
+
+            &__text {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            &__group {
+                margin-bottom: 5px;
+
+                @include mq(sm) {
+
+                }
+            }
+
+            &__label {
+                min-width: 100px;
+                color: transparentize($blue, 0.2);
+                font-weight: 600;
+            }
+
+            &__input {
+                margin-bottom: 10px;
+                width: 100%;
+                border: none;
+                background: $lightGray;
+                height: 40px;
+                padding-left: 10px;
+                border-radius: 5px;
+
+                &--textarea {
+                    height: 150px;
+                    width: 100%;
+                    resize: none;
+                    margin-bottom: 20px;
+                }
+            }
+
+            &__submit {
+                @include btn(100%);
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &__image {
+        @include img(85%, 100%, 100%, auto);
+
+        @include mq(sm) {
+            @include img(45%, 100%, auto, 100%);
+        }
+    }
+}
